@@ -1,0 +1,23 @@
+name: Probe FTP
+
+on:
+  workflow_dispatch:
+    inputs:
+      dir:
+        description: server-dir to inspect
+        required: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public/
+          server-dir: ${{ inputs.dir }}
+          dry-run: true
+          log-level: verbose
