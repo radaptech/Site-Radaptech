@@ -1,108 +1,83 @@
 import { useState, useEffect } from 'react';
+import { WHATSAPP_CONTATO } from '../../contato';
+
+const words = ['do papel.', 'da planilha.', 'do caderno.', 'do WhatsApp.'];
+
+const destaques = [
+  { titulo: 'Sistemas web', texto: 'Cadastro, estoque, pedidos e relatórios da sua empresa num sistema que abre no navegador.' },
+  { titulo: 'SGEPI', texto: 'Nosso sistema de gestão e entrega de EPIs, com assinatura digital e ficha em PDF.' },
+  { titulo: 'Sites e landing pages', texto: 'Páginas rápidas, que funcionam bem no celular e levam o visitante a falar com você.' },
+];
 
 function Hero() {
-  const words = ["organização.", "produtividade.", "inovação.", "segurança."];
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const currentWord = words[wordIndex];
-    const typeSpeed = isDeleting ? 50 : 100;
-
     const timer = setTimeout(() => {
       if (!isDeleting && text === currentWord) {
         setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && text === "") {
+      } else if (isDeleting && text === '') {
         setIsDeleting(false);
         setWordIndex((prev) => (prev + 1) % words.length);
       } else {
         setText(currentWord.substring(0, text.length + (isDeleting ? -1 : 1)));
       }
-    }, typeSpeed);
+    }, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, wordIndex, words]);
+  }, [text, isDeleting, wordIndex]);
 
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center justify-center bg-neutral-950 px-6 pb-16 pt-32 font-sans lg:px-12"
-    >
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center text-center">
-        <h1 className="mt-8 flex min-h-[120px] max-w-5xl flex-col justify-center text-4xl font-light leading-[1.1] tracking-tight text-white sm:min-h-[140px] sm:text-5xl lg:min-h-[160px] lg:text-7xl">
+    <section id="home" className="relative overflow-hidden bg-slate-950 text-white">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.35),transparent_60%)]"
+      />
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 pb-20 pt-32 text-center sm:px-6 lg:px-8">
+        <h1 className="flex min-h-[120px] max-w-5xl flex-col justify-center text-4xl font-bold leading-tight tracking-tight sm:min-h-[140px] sm:text-5xl lg:min-h-[160px] lg:text-6xl">
           <span>
-            <span className="text-white">
-              Sistemas inteligentes
-            </span>{" "}
-            para empresas que querem crescer com{" "}
+            Sistemas sob medida para empresas que ainda dependem{' '}
             <br className="hidden md:block" />
-            <span className="text-blue-500 font-normal">
+            <span className="text-blue-400">
               {text}
-              <span className="animate-pulse opacity-50">|</span>
+              <span className="animate-pulse opacity-50" aria-hidden="true">|</span>
             </span>
           </span>
         </h1>
 
-        <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-neutral-400 sm:text-lg">
-          A RadapTech desenvolve{" "}
-          <span className="text-blue-500 font-normal">
-            sistemas personalizados
-          </span>
-          , sites e{" "}
-          <span className="text-blue-500 font-normal">
-            soluções digitais
-          </span>{" "}
-          para empresas, microempreendedores e negócios que precisam modernizar processos, reduzir tarefas manuais e ganhar{" "}
-          <span className="text-blue-500 font-normal">
-            produtividade
-          </span>.
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300">
+          A RadapTech desenvolve sistemas web, sites e landing pages para pequenas e médias empresas.
+          Você conta como o trabalho é feito hoje; a gente transforma isso num sistema que o seu time
+          consegue usar desde o primeiro dia.
         </p>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
           <a
-            href="mailto:radaptech@gmail.com"
-            className="rounded-full bg-blue-600 px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-105"
+            href={WHATSAPP_CONTATO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/40 transition hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             Solicitar orçamento
           </a>
-
           <a
             href="#servicos"
-            className="rounded-full border border-neutral-800 bg-transparent px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-neutral-900"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-700 px-6 py-4 text-base font-semibold text-slate-200 transition hover:border-slate-500 hover:bg-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
           >
             Ver serviços
           </a>
         </div>
 
-        <div className="mt-28 grid w-full max-w-5xl grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-3">
-          
-          <div className="group border-t border-neutral-900 pt-6 text-left transition-colors hover:border-neutral-600">
-            <strong className="block text-xl font-normal text-white">
-              Web
-            </strong>
-            <span className="mt-3 block text-sm font-light leading-relaxed text-neutral-400">
-              Sistemas online personalizados para qualquer tipo de negócio.
-            </span>
-          </div>
-
-          <div className="group border-t border-neutral-900 pt-6 text-left transition-colors hover:border-neutral-600">
-            <strong className="block text-xl font-normal text-white">
-              EPI
-            </strong>
-            <span className="mt-3 block text-sm font-light leading-relaxed text-neutral-400">
-              Controle de estoque, entregas, colaboradores e validade de EPIs.
-            </span>
-          </div>
-
-          <div className="group border-t border-neutral-900 pt-6 text-left transition-colors hover:border-neutral-600">
-            <strong className="block text-xl font-normal text-white">
-              Sob medida
-            </strong>
-            <span className="mt-3 block text-sm font-light leading-relaxed text-neutral-400">
-              Desenvolvemos soluções exclusivas para a realidade da sua empresa.
-            </span>
-          </div>
+        <div className="mt-20 grid w-full max-w-5xl gap-4 text-left md:grid-cols-3">
+          {destaques.map((d) => (
+            <div key={d.titulo} className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6">
+              <strong className="block text-xl font-bold text-white">{d.titulo}</strong>
+              <span className="mt-2 block leading-relaxed text-slate-300">{d.texto}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

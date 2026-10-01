@@ -1,108 +1,57 @@
-import { motion } from 'framer-motion';
+import Reveal from '../../components/Reveal';
+import SectionTitle from '../../components/SectionTitle';
+
+const pilares = [
+  {
+    titulo: 'Para quem',
+    texto: 'Pequenas e médias empresas, indústrias e microempreendedores que controlam o dia a dia em papel, planilha ou conversa de WhatsApp.',
+  },
+  {
+    titulo: 'O que você recebe',
+    texto: 'Um sistema no navegador do computador e do celular, com login para cada pessoa da equipe e os dados guardados em nuvem.',
+  },
+  {
+    titulo: 'Produto próprio',
+    texto: 'O SGEPI, sistema de gestão e entrega de EPIs, foi desenvolvido por nós do banco de dados à tela. É a mesma forma de trabalhar que usamos nos projetos de clientes.',
+    largo: true,
+  },
+];
 
 function About() {
   return (
-    <section id="sobre" className="relative bg-neutral-950 px-6 py-28 font-sans lg:px-12">
-      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative"
-        >
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-            Sobre a RadapTech
-          </span>
-
-          <h2 className="mt-6 text-3xl font-light leading-tight text-white sm:text-4xl lg:text-5xl">
-            Tecnologia simples, funcional e feita para resolver{" "}
-            <span className="font-normal text-white-500 ">problemas reais</span>.
-          </h2>
-
-          <p className="mt-6 text-base font-light leading-relaxed text-neutral-400 sm:text-lg">
-            A Radaptech nasceu com o objetivo de desenvolver{" "}
-            <span className="text-blue-500 font-normal">sistemas personalizados</span>{" "}
-            para empresas e negócios que precisam{" "}
-            <span className="text-blue-500 font-normal">organizar melhor suas informações</span>{" "}
-            e modernizar seus processos.
-          </p>
-        </motion.div>
+    <section id="sobre" className="scroll-mt-20 bg-white py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-8">
+        <Reveal>
+          <SectionTitle
+            center={false}
+            eyebrow="Sobre a RadapTech"
+            title="Sistemas do tamanho da sua empresa."
+            text="Sua empresa cresceu além da planilha, mas não precisa de um sistema gigante, caro e cheio de módulos que ninguém usa. É para esse espaço que a RadapTech desenvolve."
+          />
+        </Reveal>
 
         <div>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-base font-light leading-relaxed text-neutral-400 sm:text-lg"
-          >
-            Nosso foco é criar{" "}
-            <span className="text-blue-500 font-normal">soluções digitais sob medida</span>,
-            evitando sistemas complicados e cheios de recursos que o cliente não usa. A ideia é entender a necessidade do negócio e transformar essa necessidade em uma ferramenta{" "}
-            <span className="text-blue-500 font-normal">clara</span>,{" "}
-            <span className="text-blue-500 font-normal">elegante</span> e{" "}
-            <span className="text-blue-500 font-normal">eficiente</span>.
-          </motion.p>
+          <Reveal delay={0.1}>
+            <p className="text-lg leading-relaxed text-slate-600">
+              Antes de desenhar qualquer tela, entendemos como o trabalho acontece hoje: quem preenche
+              o quê, onde a informação se perde, o que dá retrabalho. O sistema sai com o que a sua equipe
+              usa no dia a dia — e nada além disso.
+            </p>
+          </Reveal>
 
-          <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2">
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="group border-t border-neutral-900 pt-6 transition-colors hover:border-neutral-600"
-            >
-              <h3 className="text-lg font-normal text-white">
-                Missão
-              </h3>
-              <p className="mt-3 text-sm font-light leading-relaxed text-neutral-400">
-                Ajudar empresas a saírem de{" "}
-                <span className="text-white-500 font-normal">processos manuais</span>{" "}
-                e ganharem mais organização com{" "}
-                <span className="text-blue-500 font-normal">sistemas digitais</span>.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="group border-t border-neutral-900 pt-6 transition-colors hover:border-neutral-600"
-            >
-              <h3 className="text-lg font-normal text-white">
-                Visão
-              </h3>
-              <p className="mt-3 text-sm font-light leading-relaxed text-neutral-400">
-                Ser uma empresa reconhecida por entregar{" "}
-                <span className="text-blue-500 font-normal">soluções simples</span>, úteis e{" "}
-                <span className="text-blue-500 font-normal">bem construídas</span>.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="group border-t border-neutral-900 pt-6 transition-colors hover:border-neutral-600 sm:col-span-2"
-            >
-              <h3 className="text-lg font-normal text-white">
-                Para quem criamos
-              </h3>
-              <p className="mt-3 text-sm font-light leading-relaxed text-neutral-400">
-                Empresas, microempreendedores, equipes pequenas e negócios que precisam de{" "}
-                <span className="text-blue-500 font-normal">controle</span>,{" "}
-                <span className="text-blue-500 font-normal">gestão</span> e{" "}
-                <span className="text-blue-500 font-normal">presença digital</span>.
-              </p>
-            </motion.div>
-
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {pilares.map((p, i) => (
+              <Reveal
+                key={p.titulo}
+                delay={0.2 + i * 0.1}
+                className={`rounded-3xl border border-slate-200 bg-slate-50 p-7 ${p.largo ? 'sm:col-span-2' : ''}`}
+              >
+                <h3 className="text-lg font-bold text-slate-900">{p.titulo}</h3>
+                <p className="mt-2 leading-relaxed text-slate-600">{p.texto}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
-
       </div>
     </section>
   );

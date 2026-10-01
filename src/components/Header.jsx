@@ -1,115 +1,93 @@
 import { useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
+import { WHATSAPP_CONTATO, WHATSAPP_DEMO_EPI } from '../contato'
 
-const MenuIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="4" y1="12" x2="20" y2="12"></line>
-    <line x1="4" y1="6" x2="20" y2="6"></line>
-    <line x1="4" y1="18" x2="20" y2="18"></line>
-  </svg>
-)
+const linksHome = [
+  { label: 'Início', href: '#home' },
+  { label: 'Sobre', href: '#sobre' },
+  { label: 'Serviços', href: '#servicos' },
+  { label: 'Sistemas', href: '#epi' },
+  { label: 'Processo', href: '#processo' },
+  { label: 'Contato', href: '#contato' },
+]
 
-const CloseIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"></line>
-    <line x1="6" y1="6" x2="18" y2="18"></line>
-  </svg>
-)
+const linksEpi = [
+  { label: 'O problema', href: '#problema' },
+  { label: 'Como funciona', href: '#como-funciona' },
+  { label: 'Benefícios', href: '#beneficios' },
+  { label: 'Dúvidas', href: '#duvidas' },
+]
+
+const foco = 'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
+  const isHomePage = useLocation().pathname === '/'
 
-  const isHomePage = location.pathname === '/'
-
-  const links = [
-    { label: 'Início', href: '#home' },
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Serviços', href: '#servicos' },
-    { label: 'Sistemas', href: '#epi' },
-    { label: 'Processo', href: '#processo' },
-    { label: 'Contato', href: '#contato' },
-  ]
-
-  function closeMenu() {
-    setIsOpen(false)
-  }
+  const links = isHomePage ? linksHome : linksEpi
+  const cta = isHomePage
+    ? { label: 'Fale conosco', href: WHATSAPP_CONTATO }
+    : { label: 'Agendar demonstração', href: WHATSAPP_DEMO_EPI }
+  const ctaAttrs = { target: '_blank', rel: 'noopener noreferrer' }
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/5 bg-neutral-950/80 backdrop-blur-md transition-all font-sans">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
-        <div className="flex items-center">
-          {isHomePage ? (
-            <Logo />
-          ) : (
-            <Link to="/" className="transition-opacity hover:opacity-80">
-              <Logo />
-            </Link>
-          )}
-        </div>
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/90 font-sans backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        {isHomePage ? (
+          <a href="#home" className={`group rounded-lg ${foco}`}><Logo /></a>
+        ) : (
+          <Link to="/" className={`group rounded-lg ${foco}`}><Logo /></Link>
+        )}
 
-        {isHomePage && (
-          <>
-            <nav className="hidden items-center gap-10 lg:flex">
-              {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-light tracking-wide text-neutral-400 transition-colors hover:text-blue-600"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-
-            <a
-              href="mailto:radaptech@gmail.com"
-              className="hidden rounded-full bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-transform hover:scale-105 lg:inline-flex"
-            >
-              Fale conosco
+        <nav className="hidden items-center gap-8 lg:flex">
+          {links.map((link) => (
+            <a key={link.label} href={link.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">
+              {link.label}
             </a>
+          ))}
+        </nav>
 
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-neutral-400 transition-colors hover:text-white lg:hidden"
-              aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
-            >
-              {isOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
-          </>
-        )}
-
-        {!isHomePage && (
+        <div className="flex items-center gap-2">
           <a
-            href="mailto:radaptech@gmail.com"
-            className="hidden rounded-full bg-white px-6 py-2 text-sm font-medium text-black transition-transform hover:scale-105 lg:inline-flex"
+            href={cta.href}
+            {...ctaAttrs}
+            className={`hidden rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500 sm:inline-flex ${foco}`}
           >
-            Fale com a equipe
+            {cta.label}
           </a>
-        )}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`rounded-lg p-2 text-slate-300 transition-colors hover:text-white lg:hidden ${foco}`}
+            aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
-      {isHomePage && isOpen && (
-        <div className="absolute left-0 top-full w-full border-b border-white/5 bg-neutral-950/95 backdrop-blur-xl lg:hidden">
-          <nav className="flex flex-col px-6 py-6">
+      {isOpen && (
+        <div className="absolute left-0 top-full w-full border-b border-slate-800 bg-slate-950 lg:hidden">
+          <nav className="flex flex-col px-4 py-4 sm:px-6">
             {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={closeMenu}
-                className="border-b border-white/5 py-4 text-sm font-light tracking-wide text-neutral-300 transition-colors hover:text-white"
+                onClick={() => setIsOpen(false)}
+                className="border-b border-slate-800 py-4 text-sm font-medium text-slate-300 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
             ))}
-
             <a
-              href="mailto:radaptech@gmail.com"
-              onClick={closeMenu}
-              className="mt-6 inline-flex justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-neutral-200"
+              href={cta.href}
+              {...ctaAttrs}
+              onClick={() => setIsOpen(false)}
+              className="mt-5 inline-flex justify-center rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
             >
-              Fale conosco
+              {cta.label}
             </a>
           </nav>
         </div>

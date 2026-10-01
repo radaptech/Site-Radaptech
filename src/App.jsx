@@ -14,7 +14,7 @@ import SystemPage from './pages/sistema-epi/SystemPage';
 function App() {
   return (
     <BrowserRouter>
-      <main className="relative min-h-screen overflow-x-hidden bg-transparent text-white">
+      <main className="relative min-h-screen overflow-x-hidden bg-white font-sans text-slate-900 antialiased">
 
         <div className="relative z-10">
           <Header />

@@ -1,30 +1,35 @@
 import { useEffect } from 'react';
 import HeroSystem from './HeroSystem';
 import Problems from './Problems';
-import Features from './Features';
+import ComoFunciona from './ComoFunciona';
 import Dashboard from './Dashboard';
-import Mobile from './Mobile';
 import Benefits from './Benefits';
+import Mobile from './Mobile';
 import FAQ from './FAQ';
 import CTA from './CTA';
 
 const SystemPage = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const tituloAnterior = document.title;
+    document.title = 'SGEPI | Gestão e entrega de EPIs com assinatura digital — RadapTech';
+    return () => {
+      document.title = tituloAnterior;
+    };
+  }, []);
 
-    return (
-        <>
-            <HeroSystem />
-            <Problems />
-            <Features />
-            <Dashboard />
-            <Mobile />
-            <Benefits />
-            <FAQ />
-            <CTA />
-        </>
-    );
+  return (
+    <>
+      <HeroSystem />
+      <Problems />
+      <ComoFunciona />
+      <Dashboard />
+      <Benefits />
+      <Mobile />
+      <FAQ />
+      <CTA />
+    </>
+  );
 };
 
 export default SystemPage;

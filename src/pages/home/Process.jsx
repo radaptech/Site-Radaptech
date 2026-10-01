@@ -1,87 +1,50 @@
-import { motion } from 'framer-motion';
+import Reveal from '../../components/Reveal';
+import SectionTitle from '../../components/SectionTitle';
 
 const steps = [
   {
-    title: 'Entendimento',
-    description:
-      'Conversamos para entender o problema, o tipo de negócio e o que o sistema precisa resolver.',
+    title: 'Conversa',
+    description: 'Você explica como o processo funciona hoje e onde ele trava. A gente pergunta até entender de verdade.',
   },
   {
-    title: 'Planejamento',
-    description:
-      'Organizamos as funcionalidades, telas e prioridades para criar uma solução clara e viável.',
+    title: 'Proposta',
+    description: 'Definimos o que entra na primeira versão, quanto tempo leva e quanto custa. Você aprova antes de começarmos.',
   },
   {
     title: 'Desenvolvimento',
-    description:
-      'Construímos o sistema com foco em usabilidade, organização, responsividade e funcionamento.',
+    description: 'Construímos o sistema e mostramos as telas funcionando durante o caminho, para ajustar cedo e não só no final.',
   },
   {
-    title: 'Entrega e ajustes',
-    description:
-      'Apresentamos a solução, fazemos ajustes necessários e orientamos o cliente no uso.',
+    title: 'Entrega',
+    description: 'Colocamos no ar, ensinamos quem vai usar e corrigimos o que aparecer nas primeiras semanas de uso real.',
   },
-]
+];
 
 function Process() {
   return (
-    <section id="processo" className="relative bg-neutral-950 px-6 py-28 font-sans lg:px-12">
-      <div className="mx-auto max-w-7xl">
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-            Como trabalhamos
-          </span>
+    <section id="processo" className="scroll-mt-20 bg-slate-950 py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionTitle
+            dark
+            eyebrow="Como trabalhamos"
+            title="Como um projeto acontece."
+            text="Quatro etapas, do primeiro contato ao sistema funcionando na sua empresa."
+          />
+        </Reveal>
 
-          <h2 className="mt-6 text-3xl font-light leading-tight text-white sm:text-4xl lg:text-5xl">
-            Do <span className="font-normal text-white">problema</span> à solução digital.
-          </h2>
-
-          <p className="mt-6 text-base font-light leading-relaxed text-neutral-400 sm:text-lg">
-            Nosso processo é pensado para transformar uma{" "}
-            <span className="text-blue-500 font-normal">necessidade real</span>{" "}
-            em um sistema{" "}
-            <span className="text-blue-500 font-normal">funcional</span>,{" "}
-            <span className="text-blue-500 font-normal">objetivo</span> e fácil de usar.
-          </p>
-        </motion.div>
-
-        <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <motion.article
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="group relative border-t border-neutral-800 pt-8 transition-colors hover:border-neutral-600"
-            >
-              <div className="relative">
-                <span className="block text-4xl font-light text-neutral-800 transition-colors group-hover:text-neutral-400">
-                  0{index + 1}
-                </span>
-
-                <h3 className="mt-6 text-xl font-normal text-white">
-                  {step.title}
-                </h3>
-
-                <p className="mt-4 text-sm font-light leading-relaxed text-neutral-400">
-                  {step.description}
-                </p>
-              </div>
-            </motion.article>
+            <Reveal as="li" key={step.title} delay={index * 0.08} className="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+              <span className="text-4xl font-bold text-blue-400/40" aria-hidden="true">0{index + 1}</span>
+              <h3 className="mt-4 text-lg font-bold text-white">{step.title}</h3>
+              <p className="mt-2 leading-relaxed text-slate-300">{step.description}</p>
+            </Reveal>
           ))}
-        </div>
-        
+        </ol>
       </div>
     </section>
-  )
+  );
 }
 
-export default Process
+export default Process;
