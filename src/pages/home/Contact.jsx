@@ -1,7 +1,7 @@
 import Reveal from '../../components/Reveal';
 import SectionTitle from '../../components/SectionTitle';
 import { MessageCircle } from 'lucide-react';
-import { WHATSAPP_CONTATO, WHATSAPP_EXIBICAO, linkWhatsapp } from '../../contato';
+import { WHATSAPP_CONTATOS, linkWhatsapp } from '../../contato';
 
 const campo =
   'w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-transparent focus:bg-white focus:ring-2 focus:ring-blue-600';
@@ -28,15 +28,18 @@ function Contact() {
           />
           <div className="mt-10">
             <p className="text-sm font-semibold text-slate-500">WhatsApp</p>
-            <a
-              href={WHATSAPP_CONTATO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 inline-flex items-center gap-2 text-xl font-semibold text-blue-600 transition-colors hover:text-blue-700"
-            >
-              <MessageCircle className="h-5 w-5" aria-hidden="true" />
-              {WHATSAPP_EXIBICAO}
-            </a>
+            {WHATSAPP_CONTATOS.map(({ nome, exibicao, link }) => (
+              <a
+                key={nome}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 flex items-center gap-2 text-xl font-semibold text-blue-600 transition-colors hover:text-blue-700"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                {nome} {exibicao}
+              </a>
+            ))}
           </div>
         </Reveal>
 
