@@ -7,7 +7,7 @@ export const WHATSAPP_CONTATO = linkWhatsapp(MENSAGEM_CONTATO);
 
 export const WHATSAPP_CONTATOS = [
   { nome: 'Davi', exibicao: '(34) 99897-2788', link: WHATSAPP_CONTATO },
-  { nome: 'Paloma', exibicao: '(83) 9157-5314', link: linkWhatsapp(MENSAGEM_CONTATO, '558391575314') },
+  { nome: 'Paloma', exibicao: '(83) 99157-5314', link: linkWhatsapp(MENSAGEM_CONTATO, '5583991575314') },
 ];
 
 export const WHATSAPP_DEMO_EPI = linkWhatsapp(
