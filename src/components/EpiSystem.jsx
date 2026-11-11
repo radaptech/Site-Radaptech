@@ -40,7 +40,7 @@ function EpiSystem() {
         </div>
 
         <figure className="mx-auto w-full max-w-md">
-          <img src={imgTablet} alt="Painel do SGEPI no tablet" className="h-auto w-full rounded-md" />
+          <img src={imgTablet} alt="Painel do SGEPI no tablet" className="h-auto w-full rounded-md ring-1 ring-white/20" />
           <figcaption className="rotulo mt-3 !text-white/60">Tela real do SGEPI no tablet</figcaption>
         </figure>
       </div>

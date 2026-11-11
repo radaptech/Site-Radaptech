@@ -10,13 +10,13 @@ function Mobile() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <div className="relative mx-auto h-[300px] w-full max-w-2xl sm:h-[420px] lg:h-[480px]">
-            <div className="absolute right-0 top-0 z-10 w-[90%] overflow-hidden rounded-md bg-white lg:w-[85%]">
+            <div className="absolute right-0 top-0 z-10 w-[90%] overflow-hidden rounded-md ring-1 ring-white/20 lg:w-[85%]">
               <img src={imgDesktop} alt="SGEPI no computador" className="h-auto w-full" />
             </div>
-            <div className="absolute bottom-[5%] left-0 z-20 w-[48%] overflow-hidden rounded-md border-4 border-tinta bg-white lg:w-[42%]">
+            <div className="absolute bottom-[5%] left-0 z-20 w-[48%] overflow-hidden rounded-md border-4 border-tinta ring-1 ring-white/20 lg:w-[42%]">
               <img src={imgTablet} alt="SGEPI no tablet" className="h-auto w-full" />
             </div>
-            <div className="absolute bottom-[10%] right-[10%] z-30 w-[28%] overflow-hidden rounded-[1.25rem] border-[5px] border-fita-2 bg-white lg:right-[15%] lg:w-[24%]">
+            <div className="absolute bottom-[10%] right-[10%] z-30 w-[28%] overflow-hidden rounded-[1.25rem] border-[5px] border-fita-2 ring-1 ring-white/20 lg:right-[15%] lg:w-[24%]">
               <img src={imgMobile} alt="SGEPI no celular" className="h-auto w-full" />
             </div>
           </div>
