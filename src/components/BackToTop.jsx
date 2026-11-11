@@ -32,10 +32,10 @@ function BackToTop() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          
+          
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-blue-600 text-white shadow-lg shadow-blue-900/30 transition-colors hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 sm:bottom-10 sm:right-10"
+          className="fita foco fixed bottom-5 right-5 z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-[3px] text-white transition-colors hover:bg-fita-2 sm:bottom-8 sm:right-8"
           aria-label="Voltar ao topo"
         >
           <ArrowUp size={20} strokeWidth={1.5} />

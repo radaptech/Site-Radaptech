@@ -1,36 +1,16 @@
-import {
-  AlertTriangle,
-  Building2,
-  CloudUpload,
-  FileText,
-  Gavel,
-  HardHat,
-  History,
-  KeyRound,
-  LockKeyhole,
-  PackageCheck,
-  PenLine,
-  Scale,
-  Smartphone,
-  Users,
-} from 'lucide-react';
-
 // Toda funcionalidade citada aqui existe no SGEPI hoje. Não acrescente promessas que o produto não cumpre
 // (ex.: "validade jurídica total", "zera multa").
 
 export const problemsData = [
   {
-    icon: Gavel,
     title: 'Auto de infração na fiscalização',
     desc: 'O auditor pede o comprovante de entrega de EPI de um colaborador específico. A ficha não está na pasta, ou está sem assinatura. Isso vira autuação.',
   },
   {
-    icon: Scale,
     title: 'Processo trabalhista sem defesa',
     desc: 'Ex-funcionário pede adicional de insalubridade alegando que nunca recebeu protetor auricular. Sem a ficha assinada, com data e CA do equipamento, a empresa não tem como provar o contrário.',
   },
   {
-    icon: AlertTriangle,
     title: 'EPI vencido na mão do trabalhador',
     desc: 'CA vencido ou lote fora da validade entregue sem ninguém perceber. Em caso de acidente, o problema deixa de ser só administrativo.',
   },
@@ -38,17 +18,14 @@ export const problemsData = [
 
 export const stepsData = [
   {
-    icon: PackageCheck,
     title: 'Entrada por nota fiscal e lote',
     desc: 'Lance a NF do fornecedor com lote, data de fabricação e validade de cada item. O estoque passa a ser controlado lote a lote.',
   },
   {
-    icon: PenLine,
     title: 'Entrega com assinatura na hora',
     desc: 'O TST seleciona o colaborador, os EPIs e o tamanho. O trabalhador assina com o dedo na tela do celular ou tablet, ou a entrega é confirmada por foto. Cada registro recebe um token de auditoria único.',
   },
   {
-    icon: FileText,
     title: 'Ficha de EPI em PDF, sempre disponível',
     desc: 'A ficha sai com colaborador, função, departamento, EPIs entregues, código de barras e assinatura. Pronta para imprimir, anexar no processo ou mostrar ao auditor.',
   },
@@ -56,7 +33,6 @@ export const stepsData = [
 
 export const benefitsData = [
   {
-    icon: HardHat,
     publico: 'Técnico de Segurança do Trabalho',
     itens: [
       'Entrega registrada em menos tempo do que levaria para achar a ficha de papel.',
@@ -65,7 +41,6 @@ export const benefitsData = [
     ],
   },
   {
-    icon: Users,
     publico: 'RH e Jurídico',
     itens: [
       'Ficha de EPI em PDF por entrega, pronta para instruir a defesa.',
@@ -74,7 +49,6 @@ export const benefitsData = [
     ],
   },
   {
-    icon: Building2,
     publico: 'Dono da empresa e gestão',
     itens: [
       'Estoque por lote: o lote que vence primeiro sai primeiro.',
@@ -84,7 +58,6 @@ export const benefitsData = [
     ],
   },
   {
-    icon: Smartphone,
     publico: 'Equipes em campo: frigorífico, obra, fábrica',
     itens: [
       'Funciona no navegador do celular e do tablet, sem instalar aplicativo.',
@@ -95,10 +68,10 @@ export const benefitsData = [
 ];
 
 export const guaranteesData = [
-  { icon: CloudUpload, text: 'Assinaturas armazenadas em nuvem, vinculadas ao registro da entrega.' },
-  { icon: History, text: 'Backup automático do banco de dados em nuvem.' },
-  { icon: KeyRound, text: 'Senhas protegidas com criptografia argon2id e login individual.' },
-  { icon: LockKeyhole, text: 'Dados de cada empresa isolados dos demais clientes.' },
+  { text: 'Assinaturas armazenadas em nuvem, vinculadas ao registro da entrega.' },
+  { text: 'Backup automático do banco de dados em nuvem.' },
+  { text: 'Senhas protegidas com criptografia argon2id e login individual.' },
+  { text: 'Dados de cada empresa isolados dos demais clientes.' },
 ];
 
 export const faqData = [

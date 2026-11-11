@@ -12,7 +12,7 @@ const SystemPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const tituloAnterior = document.title;
-    document.title = 'SGEPI | Gestão e entrega de EPIs com assinatura digital — RadapTech';
+    document.title = 'SGEPI | Gestão e entrega de EPIs com assinatura digital | RadapTech';
     return () => {
       document.title = tituloAnterior;
     };

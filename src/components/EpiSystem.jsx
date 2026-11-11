@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ClipboardCheck } from 'lucide-react';
-import Reveal from './Reveal';
+import { ArrowRight, Check } from 'lucide-react';
 import SectionTitle from './SectionTitle';
+import { botaoClaro } from './botoes';
 import imgTablet from '../pages/sistema-epi/imagens/tablet.png';
 
 const features = [
@@ -15,39 +15,34 @@ const features = [
 
 function EpiSystem() {
   return (
-    <section id="epi" className="scroll-mt-20 bg-white py-20 sm:py-28">
-      <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
-        <Reveal>
+    <section id="epi" className="bg-tinta py-20 text-white sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:px-8">
+        <div>
           <SectionTitle
-            center={false}
-            eyebrow="Sistema em destaque · SGEPI"
-            title="Gestão e entrega de EPIs em conformidade com a NR-6."
-            text="Toda entrega de EPI assinada pelo colaborador, registrada e pronta para a fiscalização. Sem ficha de papel perdida, sem entrega sem prova."
+            dark
+            title="SGEPI: gestão e entrega de EPIs em conformidade com a NR-6."
+            text="Toda entrega de EPI assinada pelo colaborador, registrada e pronta para a fiscalização."
           />
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-10 grid border-t border-white/15 sm:grid-cols-2 sm:gap-x-8">
             {features.map((feature) => (
-              <li key={feature} className="flex gap-3 text-slate-600">
-                <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" aria-hidden="true" />
-                <span className="leading-relaxed">{feature}</span>
+              <li key={feature} className="flex gap-3 border-b border-white/15 py-3.5 text-white/85">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-ciano" strokeWidth={2.5} aria-hidden="true" />
+                {feature}
               </li>
             ))}
           </ul>
 
-          <Link
-            to="/sistema-epi"
-            className="mt-10 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
-          >
-            Conhecer o sistema
+          <Link to="/sistema-epi" className={`${botaoClaro} foco-claro mt-10`}>
+            Conhecer o SGEPI
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </Link>
-        </Reveal>
+        </div>
 
-        <Reveal delay={0.15} className="mx-auto w-full max-w-sm lg:max-w-md">
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-3 shadow-xl shadow-slate-900/10">
-            <img src={imgTablet} alt="Painel do SGEPI no tablet" className="h-auto w-full rounded-2xl" />
-          </div>
-        </Reveal>
+        <figure className="mx-auto w-full max-w-md">
+          <img src={imgTablet} alt="Painel do SGEPI no tablet" className="h-auto w-full rounded-md" />
+          <figcaption className="rotulo mt-3 !text-white/60">Tela real do SGEPI no tablet</figcaption>
+        </figure>
       </div>
     </section>
   );

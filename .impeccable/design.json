@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:10:08.793044+00:00",
+  "title": "Design System: RadapTech",
+  "extensions": {
+    "colorMeta": {
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "tonalRamp": [
+          "oklch(15% 0.008 260)",
+          "oklch(25% 0.008 260)",
+          "oklch(35% 0.008 260)",
+          "oklch(47% 0.008 260)",
+          "oklch(59% 0.008 260)",
+          "oklch(71% 0.008 260)",
+          "oklch(83% 0.008 260)",
+          "oklch(95% 0.008 260)"
+        ]
+      },
+      "fita": {
+        "role": "neutral",
+        "displayName": "Fita de Rotulador",
+        "tonalRamp": [
+          "oklch(15% 0.01 260)",
+          "oklch(25% 0.01 260)",
+          "oklch(35% 0.01 260)",
+          "oklch(47% 0.01 260)",
+          "oklch(59% 0.01 260)",
+          "oklch(71% 0.01 260)",
+          "oklch(83% 0.01 260)",
+          "oklch(95% 0.01 260)"
+        ]
+      },
+      "fita-2": {
+        "role": "neutral",
+        "displayName": "Fita Gasta",
+        "tonalRamp": [
+          "oklch(15% 0.012 260)",
+          "oklch(25% 0.012 260)",
+          "oklch(35% 0.012 260)",
+          "oklch(47% 0.012 260)",
+          "oklch(59% 0.012 260)",
+          "oklch(71% 0.012 260)",
+          "oklch(83% 0.012 260)",
+          "oklch(95% 0.012 260)"
+        ]
+      },
+      "azul": {
+        "role": "primary",
+        "displayName": "Azul Carimbo",
+        "tonalRamp": [
+          "oklch(15% 0.2 262)",
+          "oklch(25% 0.2 262)",
+          "oklch(35% 0.2 262)",
+          "oklch(47% 0.2 262)",
+          "oklch(59% 0.2 262)",
+          "oklch(71% 0.2 262)",
+          "oklch(83% 0.2 262)",
+          "oklch(95% 0.2 262)"
+        ]
+      },
+      "azul-escuro": {
+        "role": "primary",
+        "displayName": "Azul Carimbo Fundo",
+        "tonalRamp": [
+          "oklch(15% 0.2 262)",
+          "oklch(25% 0.2 262)",
+          "oklch(35% 0.2 262)",
+          "oklch(47% 0.2 262)",
+          "oklch(59% 0.2 262)",
+          "oklch(71% 0.2 262)",
+          "oklch(83% 0.2 262)",
+          "oklch(95% 0.2 262)"
+        ]
+      },
+      "ciano": {
+        "role": "secondary",
+        "displayName": "Ciano de Fita",
+        "tonalRamp": [
+          "oklch(15% 0.13 220)",
+          "oklch(25% 0.13 220)",
+          "oklch(35% 0.13 220)",
+          "oklch(47% 0.13 220)",
+          "oklch(59% 0.13 220)",
+          "oklch(71% 0.13 220)",
+          "oklch(83% 0.13 220)",
+          "oklch(95% 0.13 220)"
+        ]
+      },
+      "linha": {
+        "role": "neutral",
+        "displayName": "Linha",
+        "tonalRamp": [
+          "oklch(15% 0.012 255)",
+          "oklch(25% 0.012 255)",
+          "oklch(35% 0.012 255)",
+          "oklch(47% 0.012 255)",
+          "oklch(59% 0.012 255)",
+          "oklch(71% 0.012 255)",
+          "oklch(83% 0.012 255)",
+          "oklch(95% 0.012 255)"
+        ]
+      },
+      "forro": {
+        "role": "neutral",
+        "displayName": "Forro",
+        "tonalRamp": [
+          "oklch(15% 0.006 255)",
+          "oklch(25% 0.006 255)",
+          "oklch(35% 0.006 255)",
+          "oklch(47% 0.006 255)",
+          "oklch(59% 0.006 255)",
+          "oklch(71% 0.006 255)",
+          "oklch(83% 0.006 255)",
+          "oklch(95% 0.006 255)"
+        ]
+      },
+      "mudo": {
+        "role": "neutral",
+        "displayName": "Mudo",
+        "tonalRamp": [
+          "oklch(15% 0.015 255)",
+          "oklch(25% 0.015 255)",
+          "oklch(35% 0.015 255)",
+          "oklch(47% 0.015 255)",
+          "oklch(59% 0.015 255)",
+          "oklch(71% 0.015 255)",
+          "oklch(83% 0.015 255)",
+          "oklch(95% 0.015 255)"
+        ]
+      },
+      "alerta": {
+        "role": "tertiary",
+        "displayName": "Vermelho de Pendência",
+        "tonalRamp": [
+          "oklch(15% 0.19 29)",
+          "oklch(25% 0.19 29)",
+          "oklch(35% 0.19 29)",
+          "oklch(47% 0.19 29)",
+          "oklch(59% 0.19 29)",
+          "oklch(71% 0.19 29)",
+          "oklch(83% 0.19 29)",
+          "oklch(95% 0.19 29)"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(47% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(71% 0 0)",
+          "oklch(83% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Só o h1 dos heróis."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título de seção."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Etiqueta, serviço, etapa, problema."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto de apoio em mudo, 56 a 65ch."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Campo, coluna, legenda. Nunca sobretítulo."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Código, CA, token, telefone."
+      }
+    },
+    "shadows": [
+      {
+        "name": "etiqueta-colada",
+        "value": "0 1px 1px rgb(11 13 16 / 0.12), 0 10px 24px -14px rgb(11 13 16 / 0.35)",
+        "purpose": "Toda etiqueta e o formulário de contato."
+      },
+      {
+        "name": "etiqueta-erguida",
+        "value": "0 1px 1px rgb(11 13 16 / 0.12), 0 18px 32px -16px rgb(11 13 16 / 0.45)",
+        "purpose": "Hover de etiqueta clicável."
+      },
+      {
+        "name": "friso-fita",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.06), inset 0 -1px 0 rgb(0 0 0 / 0.5)",
+        "purpose": "Todo elemento de fita."
+      }
+    ],
+    "motion": [
+      {
+        "name": "colar",
+        "value": "0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Etiqueta descendo 14px e assentando no giro final; atraso escalonado de 0.18s."
+      },
+      {
+        "name": "carimbar",
+        "value": "0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.9s",
+        "purpose": "Carimbo de escala 1.6 a 1, uma vez."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none",
+        "purpose": "Desliga colar, carimbar e a rolagem suave."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal: orçamento e demonstração pelo WhatsApp.",
+      "html": "<button class=\"ds-btn\">Solicitar orçamento pelo WhatsApp</button>",
+      "css": ".ds-btn { font-family: var(--font-sans, Archivo, sans-serif); display:inline-flex; align-items:center; gap:8px; background: var(--color-azul, #1660f5); color:#fff; border:0; border-radius:3px; padding:16px 24px; font-size:1rem; font-weight:700; font-stretch:90%; cursor:pointer; transition: background-color .15s; } .ds-btn:hover { background: var(--color-azul-escuro, #0f4cc9); } .ds-btn:focus-visible { outline:2px solid var(--color-azul, #1660f5); outline-offset:3px; }"
+    },
+    {
+      "name": "Botão claro",
+      "kind": "button",
+      "refersTo": "button-claro",
+      "description": "Botão sobre fundo escuro.",
+      "html": "<div class=\"ds-escuro\"><button class=\"ds-btn-claro\">Conhecer o SGEPI</button></div>",
+      "css": ".ds-escuro { background:#0b0d10; padding:24px; } .ds-btn-claro { font-family: var(--font-sans, Archivo, sans-serif); background:#fff; color:#0b0d10; border:0; border-radius:3px; padding:16px 24px; font-size:1rem; font-weight:700; font-stretch:90%; cursor:pointer; transition: background-color .15s; } .ds-btn-claro:hover { background: var(--color-forro, #e7eaee); } .ds-btn-claro:focus-visible { outline:2px solid var(--color-ciano, #19c6f0); outline-offset:3px; }"
+    },
+    {
+      "name": "Link com seta",
+      "kind": "custom",
+      "refersTo": "link-seta",
+      "description": "Ação secundária ao lado do botão primário.",
+      "html": "<a href=\"#\" class=\"ds-link\">Como funciona um projeto</a>",
+      "css": ".ds-link { font-family: var(--font-sans, Archivo, sans-serif); font-weight:700; color:#0b0d10; text-decoration:underline; text-decoration-color:#c9ced6; text-decoration-thickness:2px; text-underline-offset:6px; transition: text-decoration-color .15s; } .ds-link:hover { text-decoration-color:#1660f5; } .ds-link:focus-visible { outline:2px solid #1660f5; outline-offset:3px; }"
+    },
+    {
+      "name": "Campo de ficha",
+      "kind": "input",
+      "refersTo": "campo-ficha",
+      "description": "Campo com rótulo pequeno dentro da caixa, como numa ficha.",
+      "html": "<label class=\"ds-campo\"><span class=\"ds-rotulo\">Nome</span><input placeholder=\"Seu nome\"></label>",
+      "css": ".ds-campo { font-family: var(--font-sans, Archivo, sans-serif); display:block; border:1px solid #0b0d10; background:#fff; padding:10px 16px 12px; transition:border-color .15s; } .ds-campo:focus-within { border-color:#1660f5; box-shadow:0 0 0 1px #1660f5; } .ds-rotulo { display:block; font-size:.72rem; font-weight:600; font-stretch:75%; letter-spacing:.08em; text-transform:uppercase; color:#4a525c; } .ds-campo input { font-family: var(--font-sans, Archivo, sans-serif); margin-top:4px; width:100%; border:0; outline:0; background:transparent; font-size:1rem; color:#0b0d10; caret-color:#1660f5; }"
+    },
+    {
+      "name": "Navegação de fita",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Cabeçalho fixo em fita preta de rotulador.",
+      "html": "<nav class=\"ds-nav\"><strong class=\"ds-logo\">RadapTech</strong><span class=\"ds-links\"><a href=\"#\">Sobre</a><a href=\"#\">Serviços</a><a href=\"#\">SGEPI</a></span><a href=\"#\" class=\"ds-cta\">Fale conosco</a></nav>",
+      "css": ".ds-nav { font-family: var(--font-sans, Archivo, sans-serif); display:flex; align-items:center; justify-content:space-between; gap:16px; padding:8px 24px; background:#15181d; box-shadow: inset 0 1px 0 rgb(255 255 255 / .06), inset 0 -1px 0 rgb(0 0 0 / .5); } .ds-logo { color:#fff; font-weight:800; font-stretch:112%; } .ds-links { display:flex; gap:28px; } .ds-links a { color:rgb(255 255 255 / .75); font-size:.95rem; font-weight:600; font-stretch:85%; text-decoration:none; transition:color .15s; } .ds-links a:hover { color:#fff; } .ds-links a:focus-visible, .ds-cta:focus-visible { outline:2px solid #19c6f0; outline-offset:3px; } .ds-cta { background:#1660f5; color:#fff; border-radius:3px; padding:10px 16px; font-size:.875rem; font-weight:700; font-stretch:90%; text-decoration:none; } .ds-cta:hover { background:#0f4cc9; }"
+    },
+    {
+      "name": "Chip de fita",
+      "kind": "chip",
+      "refersTo": "fita-chip",
+      "description": "Contato de WhatsApp ou público-alvo em fita de rotulador.",
+      "html": "<a href=\"#\" class=\"ds-chip\"><b>Davi</b><span class=\"ds-mono\">(34) 99897-2788</span></a>",
+      "css": ".ds-chip { font-family: var(--font-sans, Archivo, sans-serif); display:inline-flex; align-items:center; gap:12px; background:#15181d; color:#fff; border-radius:3px; padding:10px 16px; text-decoration:none; box-shadow: inset 0 1px 0 rgb(255 255 255 / .06), inset 0 -1px 0 rgb(0 0 0 / .5); transition:background-color .15s; } .ds-chip:hover { background:#23272e; } .ds-chip:focus-visible { outline:2px solid #1660f5; outline-offset:3px; } .ds-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }"
+    },
+    {
+      "name": "Etiqueta",
+      "kind": "card",
+      "refersTo": "etiqueta",
+      "description": "Etiqueta adesiva colada no forro, com código de barras e código RT.",
+      "html": "<div class=\"ds-forro\"><a href=\"#\" class=\"ds-etiqueta\"><strong>SGEPI</strong><span class=\"ds-txt\">Gestão e entrega de EPIs com assinatura digital.</span><span class=\"ds-cod\">||| ||  | |||  RT-EPI</span></a></div>",
+      "css": ".ds-forro { background:#e7eaee; padding:32px; } .ds-etiqueta { font-family: var(--font-sans, Archivo, sans-serif); display:block; background:#fff; color:#0b0d10; border-radius:6px; padding:20px; text-decoration:none; transform:rotate(.8deg); box-shadow:0 1px 1px rgb(11 13 16 / .12), 0 10px 24px -14px rgb(11 13 16 / .35); transition:box-shadow .2s; } .ds-etiqueta:hover { box-shadow:0 1px 1px rgb(11 13 16 / .12), 0 18px 32px -16px rgb(11 13 16 / .45); } .ds-etiqueta:focus-visible { outline:2px solid #1660f5; outline-offset:3px; } .ds-etiqueta strong { display:block; font-size:1.7rem; font-weight:800; font-stretch:112%; letter-spacing:-.025em; line-height:1.02; } .ds-txt { display:block; margin-top:8px; color:#4a525c; } .ds-cod { display:block; margin-top:16px; font-family:'JetBrains Mono', monospace; font-size:.7rem; color:#4a525c; }"
+    },
+    {
+      "name": "Carimbo",
+      "kind": "custom",
+      "refersTo": "carimbo",
+      "description": "Confirmação em tinta azul: Feito por nós, Assinada.",
+      "html": "<span class=\"ds-carimbo\">Assinada</span>",
+      "css": ".ds-carimbo { font-family: var(--font-sans, Archivo, sans-serif); display:inline-block; border:3px solid currentColor; border-radius:4px; padding:4px 10px; color:#1660f5; font-size:.8rem; font-weight:800; font-stretch:80%; letter-spacing:.12em; text-transform:uppercase; transform:rotate(-6deg); mix-blend-mode:multiply; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Etiqueta de lote",
+    "overview": "Cada processo ganha sua etiqueta. O site fala a língua do que a empresa controla: lote, CA, validade, código. O papel é branco e liso como etiqueta adesiva, a tinta é quase preta, e a fita preta de rotulador fecha a página em cima (cabeçalho) e embaixo (rodapé). O azul do logo funciona como tinta de carimbo: aparece onde algo é confirmado ou acionado, nunca como fundo atmosférico. O ciano só existe sobre a fita escura.\n\nA densidade é de formulário, não de vitrine. Seções separadas por réguas (2px tinta no topo de listas, 1px linha entre itens), campos com rótulo pequeno no canto como numa ficha de EPI ou numa DANFE, etiquetas coladas sobre o forro cinza com código de barras e código RT-XXX. O movimento é um só: etiquetas sendo coladas e o carimbo batendo, uma vez, no carregamento.\n\nO sistema recusa o hero escuro com brilho azul e a grade de cards iguais. Profundidade vem do papel colado sobre o forro, não de vidro, gradiente ou brilho.",
+    "keyCharacteristics": [
+      "Papel branco e forro cinza (#e7eaee) alternando por seção; fita preta só no topo, no rodapé e no bloco final de CTA.",
+      "Azul (#1660f5) como tinta de carimbo e de ação, ciano (#19c6f0) apenas sobre a fita.",
+      "Archivo larga e pesada nos títulos, condensada nos rótulos; JetBrains Mono só em código, CA, telefone e token.",
+      "Etiquetas adesivas com leve giro, código de barras gerado do texto e recorte tracejado no forro.",
+      "Réguas e células de formulário em vez de cards com sombra."
+    ],
+    "rules": [
+      {
+        "name": "The Tinta de Carimbo Rule",
+        "body": "O azul marca ação ou confirmação: botão, carimbo, link de ação, uma palavra no título. Nunca vira fundo de seção, gradiente ou brilho.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ciano Só na Fita Rule",
+        "body": "Ciano aparece apenas sobre fita ou tinta. Sobre papel ele some; use azul.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rótulo É Campo Rule",
+        "body": "O rótulo condensado nomeia um campo, uma coluna ou uma legenda; fica dentro ou ao lado do dado que descreve. Nunca sobe acima de um título de seção como sobretítulo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono É Dado Rule",
+        "body": "JetBrains Mono só para o que seria impresso por máquina: código, CA, token, telefone, quantidade.",
+        "section": "typography"
+      },
+      {
+        "name": "The Papel Colado Rule",
+        "body": "Só etiqueta tem sombra, e é sombra de adesivo: curta e próxima. Nenhuma sombra dura deslocada, nenhum brilho, nenhum vidro.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar azul só para ação e confirmação, e ciano só sobre fita ou tinta.",
+      "Do abrir listas com régua de 2px tinta e separar itens com 1px linha.",
+      "Do colocar o rótulo condensado dentro ou ao lado do dado que ele nomeia (campo, coluna, legenda).",
+      "Do acompanhar todo código de barras de um código legível em JetBrains Mono.",
+      "Do limitar o movimento a colar etiqueta (0.7s, cubic-bezier(0.16, 1, 0.3, 1)) e bater carimbo, desligados com prefers-reduced-motion.",
+      "Do usar o anel de foco de 2px azul com 3px de distância, ciano sobre fundo escuro.",
+      "Do alternar papel e forro entre seções em vez de traçar bordas entre elas."
+    ],
+    "donts": [
+      "Don't fazer hero escuro com brilho azul nem grade de cards iguais.",
+      "Don't pôr rótulo ou sobretítulo acima do título de seção.",
+      "Don't usar sombra fora da etiqueta, nem sombra dura deslocada, vidro ou gradiente.",
+      "Don't usar mono em texto corrido ou em títulos.",
+      "Don't usar o vermelho de alerta fora de marcação de não conformidade.",
+      "Don't tomar como padrão as duas seções inteiras em tinta (bloco SGEPI da home e bloco Mobile do SGEPI): o mundo prevê fita só no topo e no rodapé; são desvios do build atual.",
+      "Don't copiar o raio de 10px e o contorno de 1px das células da cartela de Serviços: a etiqueta do sistema é 6px com sombra de etiqueta colada."
+    ]
+  }
+}

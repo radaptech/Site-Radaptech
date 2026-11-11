@@ -1,29 +1,21 @@
-import Reveal from '../../components/Reveal';
 import SectionTitle from '../../components/SectionTitle';
 import { stepsData } from './data';
 
+// O caminho de um lote: da nota fiscal até a ficha, numa linha só.
 const ComoFunciona = () => (
-  <section id="como-funciona" className="scroll-mt-20 bg-slate-50 py-20 sm:py-28">
+  <section id="como-funciona" className="bg-forro py-20 sm:py-28">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <Reveal>
-        <SectionTitle
-          eyebrow="Como o SGEPI fecha essa brecha"
-          title="Da nota fiscal do fornecedor até a assinatura do trabalhador, tudo rastreado."
-        />
-      </Reveal>
+      <SectionTitle title="Da nota fiscal do fornecedor até a assinatura do trabalhador, tudo rastreado." />
 
-      <ol className="mt-14 grid gap-6 md:grid-cols-3">
-        {stepsData.map(({ icon: Icone, title, desc }, i) => (
-          <Reveal as="li" key={title} delay={i * 0.1} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
-            <div className="flex items-center justify-between">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
-                <Icone className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="text-4xl font-bold text-slate-100" aria-hidden="true">0{i + 1}</span>
-            </div>
-            <h3 className="mt-5 text-lg font-bold text-slate-900">{title}</h3>
-            <p className="mt-2 leading-relaxed text-slate-600">{desc}</p>
-          </Reveal>
+      <ol className="relative mt-14 grid gap-10 before:absolute before:left-6 before:top-0 before:h-full before:w-0.5 before:bg-tinta md:grid-cols-3 md:before:left-0 md:before:top-6 md:before:h-0.5 md:before:w-full">
+        {stepsData.map(({ title, desc }, i) => (
+          <li key={title} className="relative pl-16 md:pl-0 md:pt-16 md:pr-6">
+            <span className="absolute left-1.5 top-0 flex h-9 w-9 items-center justify-center rounded-full border-2 border-tinta bg-white font-bold md:left-0 md:top-1.5" aria-hidden="true">
+              {i + 1}
+            </span>
+            <h3 className="titulo text-xl sm:text-2xl">{title}</h3>
+            <p className="mt-3 max-w-[48ch] leading-relaxed text-mudo">{desc}</p>
+          </li>
         ))}
       </ol>
     </div>

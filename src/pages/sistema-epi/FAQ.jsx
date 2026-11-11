@@ -1,49 +1,20 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import Reveal from '../../components/Reveal';
+import { Plus } from 'lucide-react';
 import SectionTitle from '../../components/SectionTitle';
 import { faqData } from './data';
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-4 rounded-lg text-left font-semibold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-      >
-        {question}
-        <ChevronDown className={`h-5 w-5 shrink-0 text-slate-400 transition ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-      </button>
-
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden"
-          >
-            <p className="pt-3 leading-relaxed text-slate-600">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
 const FAQ = () => (
-  <section id="duvidas" className="scroll-mt-20 bg-white py-20 sm:py-28">
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <Reveal>
-        <SectionTitle eyebrow="Dúvidas frequentes" title="Antes de agendar, você pode estar se perguntando…" />
-      </Reveal>
-      <div className="mt-12 space-y-3">
-        {faqData.map((faq) => (
-          <FAQItem key={faq.question} {...faq} />
+  <section id="duvidas" className="bg-white py-20 sm:py-28">
+    <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.6fr] lg:px-8">
+      <SectionTitle title="Dúvidas frequentes" />
+      <div className="border-t-2 border-tinta">
+        {faqData.map(({ question, answer }) => (
+          <details key={question} className="group border-b border-linha">
+            <summary className="foco flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-lg font-bold [font-stretch:95%] [&::-webkit-details-marker]:hidden">
+              {question}
+              <Plus className="h-5 w-5 shrink-0 text-azul transition-transform group-open:rotate-45" aria-hidden="true" />
+            </summary>
+            <p className="max-w-[65ch] pb-5 leading-relaxed text-mudo">{answer}</p>
+          </details>
         ))}
       </div>
     </div>

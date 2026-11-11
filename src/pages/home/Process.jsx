@@ -1,4 +1,3 @@
-import Reveal from '../../components/Reveal';
 import SectionTitle from '../../components/SectionTitle';
 
 const steps = [
@@ -20,26 +19,25 @@ const steps = [
   },
 ];
 
+// Ordem das etapas importa, então o número fica. Lido como uma guia de tramitação.
 function Process() {
   return (
-    <section id="processo" className="scroll-mt-20 bg-slate-950 py-20 sm:py-28">
+    <section id="processo" className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <SectionTitle
-            dark
-            eyebrow="Como trabalhamos"
-            title="Como um projeto acontece."
-            text="Quatro etapas, do primeiro contato ao sistema funcionando na sua empresa."
-          />
-        </Reveal>
+        <SectionTitle
+          title="Como um projeto acontece."
+          text="Quatro etapas, do primeiro contato ao sistema funcionando na sua empresa."
+        />
 
-        <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => (
-            <Reveal as="li" key={step.title} delay={index * 0.08} className="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-              <span className="text-4xl font-bold text-blue-400/40" aria-hidden="true">0{index + 1}</span>
-              <h3 className="mt-4 text-lg font-bold text-white">{step.title}</h3>
-              <p className="mt-2 leading-relaxed text-slate-300">{step.description}</p>
-            </Reveal>
+        <ol className="mt-12 grid border-t-2 border-tinta md:grid-cols-4">
+          {steps.map((step, i) => (
+            <li key={step.title} className={`border-b border-linha py-6 md:border-b-0 md:px-6 md:py-8 ${i ? 'md:border-l md:border-l-linha' : 'md:pl-0'}`}>
+              <h3 className="titulo flex items-baseline gap-3 text-2xl">
+                <span className="text-azul">{i + 1}.</span>
+                {step.title}
+              </h3>
+              <p className="mt-3 leading-relaxed text-mudo">{step.description}</p>
+            </li>
           ))}
         </ol>
       </div>

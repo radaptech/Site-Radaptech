@@ -1,17 +1,10 @@
-// Cabeçalho padrão de seção: eyebrow azul, título forte e texto de apoio.
-function SectionTitle({ eyebrow, title, text, dark = false, center = true }) {
+// Cabeçalho de seção: título forte e texto de apoio. Sem rótulo acima do título.
+function SectionTitle({ title, text, dark = false, as: Tag = 'h2', className = '' }) {
   return (
-    <div className={center ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
-      {eyebrow && (
-        <p className={`text-sm font-semibold uppercase tracking-wider ${dark ? 'text-blue-400' : 'text-blue-600'}`}>
-          {eyebrow}
-        </p>
-      )}
-      <h2 className={`mt-3 text-3xl font-bold tracking-tight sm:text-4xl ${dark ? 'text-white' : 'text-slate-900'}`}>
-        {title}
-      </h2>
+    <div className={`max-w-3xl ${className}`}>
+      <Tag className={`titulo text-3xl sm:text-[2.6rem] ${dark ? 'text-white' : 'text-tinta'}`}>{title}</Tag>
       {text && (
-        <p className={`mt-5 text-lg leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>{text}</p>
+        <p className={`mt-5 max-w-[62ch] text-lg leading-relaxed ${dark ? 'text-white/75' : 'text-mudo'}`}>{text}</p>
       )}
     </div>
   );

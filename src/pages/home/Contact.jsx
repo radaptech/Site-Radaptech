@@ -1,10 +1,11 @@
-import Reveal from '../../components/Reveal';
 import SectionTitle from '../../components/SectionTitle';
 import { MessageCircle } from 'lucide-react';
 import { WHATSAPP_CONTATOS, linkWhatsapp } from '../../contato';
+import { botaoPrimario } from '../../components/botoes';
 
-const campo =
-  'w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-transparent focus:bg-white focus:ring-2 focus:ring-blue-600';
+// Campo de formulário no estilo ficha: rótulo pequeno dentro da caixa, no canto.
+const caixa = 'relative block border border-tinta bg-white px-4 pb-3 pt-2.5 transition-colors focus-within:border-azul focus-within:ring-1 focus-within:z-10 focus-within:ring-azul';
+const campo = 'mt-1 w-full bg-transparent text-base text-tinta outline-none placeholder:text-mudo/70';
 
 // Sem back-end: o formulário monta a mensagem e abre a conversa no WhatsApp.
 function enviar(e) {
@@ -17,57 +18,57 @@ function enviar(e) {
 
 function Contact() {
   return (
-    <section id="contato" className="scroll-mt-20 bg-slate-50 py-20 sm:py-28">
-      <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:px-8">
-        <Reveal>
+    <section id="contato" className="bg-forro py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:px-8">
+        <div>
           <SectionTitle
-            center={false}
-            eyebrow="Contato"
             title="Conte o que sua empresa precisa."
             text="Descreva o processo que você quer melhorar: como ele é feito hoje e o que costuma dar errado. Respondemos pelo WhatsApp."
           />
-          <div className="mt-10">
-            <p className="text-sm font-semibold text-slate-500">WhatsApp</p>
+          <ul className="mt-10 grid gap-3">
             {WHATSAPP_CONTATOS.map(({ nome, exibicao, link }) => (
-              <a
-                key={nome}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 flex items-center gap-2 text-xl font-semibold text-blue-600 transition-colors hover:text-blue-700"
-              >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                {nome} {exibicao}
-              </a>
+              <li key={nome}>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fita foco inline-flex items-center gap-3 rounded-[3px] px-4 py-2.5 text-white transition-colors hover:bg-fita-2"
+                >
+                  <MessageCircle className="h-5 w-5 text-ciano" aria-hidden="true" />
+                  <span className="font-bold">{nome}</span>
+                  <span className="font-mono">{exibicao}</span>
+                </a>
+              </li>
             ))}
-          </div>
-        </Reveal>
+          </ul>
+        </div>
 
-        <Reveal delay={0.15}>
-          <form onSubmit={enviar} className="grid gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <div>
-              <label htmlFor="contato-nome" className="mb-2 block text-sm font-semibold text-slate-700">Nome</label>
-              <input id="contato-nome" name="nome" type="text" required autoComplete="name" placeholder="Seu nome" className={campo} />
-            </div>
-            <div>
-              <label htmlFor="contato-empresa" className="mb-2 block text-sm font-semibold text-slate-700">
-                Empresa <span className="font-normal text-slate-400">(opcional)</span>
-              </label>
-              <input id="contato-empresa" name="empresa" type="text" autoComplete="organization" placeholder="Nome da sua empresa" className={campo} />
-            </div>
-            <div>
-              <label htmlFor="contato-mensagem" className="mb-2 block text-sm font-semibold text-slate-700">Mensagem</label>
-              <textarea id="contato-mensagem" name="mensagem" rows="4" required placeholder="Ex.: controlamos os pedidos numa planilha e sempre perdemos o que já foi entregue..." className={`${campo} resize-none`} />
-            </div>
-            <button
-              type="submit"
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-sm font-semibold text-white transition hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
-            >
-              <MessageCircle className="h-5 w-5" aria-hidden="true" />
-              Enviar pelo WhatsApp
-            </button>
-          </form>
-        </Reveal>
+        <form onSubmit={enviar} className="etiqueta grid gap-0 p-6 sm:p-8">
+          <div className="grid sm:grid-cols-2">
+            <label className={caixa}>
+              <span className="rotulo">Nome</span>
+              <input name="nome" type="text" required autoComplete="name" placeholder="Seu nome" className={campo} />
+            </label>
+            <label className={`${caixa} -mt-px sm:-ml-px sm:mt-0`}>
+              <span className="rotulo">Empresa (opcional)</span>
+              <input name="empresa" type="text" autoComplete="organization" placeholder="Nome da sua empresa" className={campo} />
+            </label>
+          </div>
+          <label className={`${caixa} -mt-px`}>
+            <span className="rotulo">Mensagem</span>
+            <textarea
+              name="mensagem"
+              rows="5"
+              required
+              placeholder="Ex.: controlamos os pedidos numa planilha e sempre perdemos o que já foi entregue..."
+              className={`${campo} resize-none`}
+            />
+          </label>
+          <button type="submit" className={`${botaoPrimario} mt-6 w-full`}>
+            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            Enviar pelo WhatsApp
+          </button>
+        </form>
       </div>
     </section>
   );

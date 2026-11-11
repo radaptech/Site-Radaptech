@@ -1,33 +1,160 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-tinta: #0b0d10;
+  --color-fita: #15181d;
+  --color-fita-2: #23272e;
+  --color-azul: #1660f5;
+  --color-azul-escuro: #0f4cc9;
+  --color-ciano: #19c6f0;
+  --color-linha: #c9ced6;
+  --color-forro: #e7eaee;
+  --color-mudo: #4a525c;
+  --color-alerta: #c2261b;
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   margin: 0;
   background: #ffffff;
-  color: #0f172a;
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
 }
 
 ::selection {
-  background: #2563eb;
+  background: var(--color-azul);
   color: #ffffff;
+}
+
+input,
+textarea {
+  caret-color: var(--color-azul);
+}
+
+a {
+  text-underline-offset: 0.2em;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--color-forro);
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: #94a3b8;
-  border-radius: 999px;
+  background: var(--color-fita);
+  border: 2px solid var(--color-forro);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #2563eb;
+/* Títulos: Archivo larga e pesada, como a impressão de uma etiqueta. */
+.titulo {
+  font-stretch: 112%;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+/* Rótulo de campo, como nos formulários (DANFE, ficha de EPI). */
+.rotulo {
+  font-stretch: 75%;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-mudo);
+}
+
+/* Fita de rotulador: preta, com as bordas da fita marcadas. */
+.fita {
+  background: var(--color-fita);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    inset 0 -1px 0 rgb(0 0 0 / 0.5);
+}
+
+/* Etiqueta adesiva: papel branco, canto arredondado do corte, sombra de quem está colada. */
+.etiqueta {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 1px rgb(11 13 16 / 0.12),
+    0 10px 24px -14px rgb(11 13 16 / 0.35);
+}
+
+/* Carimbo azul. */
+.carimbo {
+  display: inline-block;
+  border: 3px solid currentColor;
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  color: var(--color-azul);
+  font-stretch: 80%;
+  font-weight: 800;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+  mix-blend-mode: multiply;
+}
+
+/* O único movimento do site: etiquetas sendo coladas e o carimbo batendo. */
+@keyframes colar {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) rotate(var(--giro-inicial, -3deg));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--giro, 0deg));
+  }
+}
+@keyframes carimbar {
+  0% {
+    opacity: 0;
+    transform: scale(1.6) rotate(-6deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.96) rotate(-6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-6deg);
+  }
+}
+.colar {
+  transform: rotate(var(--giro, 0deg));
+  animation: colar 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.carimbar {
+  animation: carimbar 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .colar,
+  .carimbar {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.foco {
+  outline: none;
+}
+.foco:focus-visible {
+  outline: 2px solid var(--color-azul);
+  outline-offset: 3px;
+}
+.foco-claro:focus-visible {
+  outline-color: var(--color-ciano);
 }
