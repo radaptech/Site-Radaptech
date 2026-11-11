@@ -40,7 +40,7 @@ function Etiqueta({ e, i }) {
   const conteudo = (
     <>
       <div className="relative">
-        <strong className="titulo block text-2xl sm:text-[1.75rem]">{e.titulo}</strong>
+        <strong className="titulo block text-2xl">{e.titulo}</strong>
         {e.carimbo && (
           <span className="carimbo carimbar absolute -top-1 right-0 text-[0.7rem]">Feito por nós</span>
         )}
